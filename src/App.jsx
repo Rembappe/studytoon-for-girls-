@@ -439,8 +439,12 @@ export default function App() {
           </div>
           {/* メインゲージ */}
           <div style={{height:16,borderRadius:8,overflow:"hidden",background:"#ffffff22",display:"flex",position:"relative"}}>
-            <div style={{width:`${myPct}%`,background:`linear-gradient(90deg,${myColor.hex},${myColor.light})`,transition:"width 0.8s ease",borderRadius:"8px 0 0 8px"}}/>
-            <div style={{width:`${oppPct}%`,background:`linear-gradient(90deg,${oppColor.light},${oppColor.hex})`,transition:"width 0.8s ease",borderRadius:"0 8px 8px 0"}}/>
+            {/* 左から自分色 */}
+            <div style={{width:`${myPct}%`,background:`linear-gradient(90deg,${myColor.hex},${myColor.light})`,transition:"width 0.8s ease"}}/>
+            {/* 中間の空白 */}
+            <div style={{flex:1,background:"#ffffff11"}}/>
+            {/* 右から相手色 */}
+            <div style={{width:`${oppPct}%`,background:`linear-gradient(90deg,${oppColor.light},${oppColor.hex})`,transition:"width 0.8s ease"}}/>
           </div>
           {/* 勉強時間 */}
           <div style={{display:"flex",justifyContent:"space-between",marginTop:6,fontSize:11,opacity:0.6}}>
